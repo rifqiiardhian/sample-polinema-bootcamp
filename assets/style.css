@@ -1,0 +1,246 @@
+/* --- Global & Reset --- */
+* {
+    box-sizing: border-box; /* Memudahkan perhitungan layout */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9fafb; /* Warna latar belakang body */
+    color: #333;
+}
+
+/* Membuat scrolling lebih mulus */
+html {
+    scroll-behavior: smooth;
+}
+
+/* --- Utility Classes --- */
+.cta-button {
+    display: inline-block;
+    background-color: #007bff; /* Warna biru primer */
+    color: #ffffff;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #0056b3; /* Warna biru lebih gelap saat hover */
+    transform: translateY(-2px); /* Efek sedikit terangkat */
+}
+
+/* --- Header / Navigasi --- */
+header {
+    background: #ffffff;
+    padding: 1rem 0;
+    border-bottom: 1px solid #e0e0e0;
+    position: sticky; /* Membuat nav tetap di atas saat scroll */
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+header nav {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto; /* Tengah */
+    display: flex;
+    justify-content: space-between; /* Logo di kiri, menu di kanan */
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #007bff;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+header li {
+    margin-left: 2rem;
+}
+
+header a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+}
+
+header a:hover {
+    color: #007bff;
+}
+
+/* Tombol khusus di navigasi */
+.nav-button {
+    background-color: #f0f0f0;
+    padding: 8px 16px;
+    border-radius: 6px;
+}
+.nav-button:hover {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+/* --- Hero Section --- */
+#hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1200px;
+    margin: 2rem auto; /* Jarak atas-bawah dan tengah */
+    padding: 2rem 0;
+    gap: 2rem; /* Jarak antara teks dan gambar */
+}
+
+.hero-content {
+    flex: 1; /* Mengambil ruang yang tersedia */
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: #222;
+}
+
+.hero-content p {
+    font-size: 1.15rem;
+    margin-bottom: 2rem;
+    color: #555;
+}
+
+.hero-content .small-text {
+    display: block;
+    font-size: 0.9rem;
+    color: #777;
+    margin-top: 0.5rem;
+}
+
+.hero-image {
+    flex: 1;
+    text-align: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* --- Fitur Section --- */
+#fitur {
+    background-color: #ffffff;
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+#fitur h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.fitur-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem; /* Jarak antar box fitur */
+    flex-wrap: wrap; /* Agar responsif di mobile */
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.fitur-box {
+    flex-basis: 300px; /* Lebar dasar setiap box */
+    background: #f9fafb;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e0e0e0;
+}
+
+.fitur-box h3 {
+    font-size: 1.5rem;
+    color: #007bff;
+    margin-bottom: 1rem;
+}
+
+/* --- CTA Section --- */
+#cta {
+    background-color: #333;
+    color: #ffffff;
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+#cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+#cta p {
+    font-size: 1.15rem;
+    margin-bottom: 2rem;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #222;
+    color: #aaa;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.social-links {
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: #aaa;
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+
+.social-links a:hover {
+    color: #ffffff;
+}
+
+/* --- Responsive (Mobile) --- */
+@media (max-width: 768px) {
+    header nav {
+        flex-direction: column; /* Ubah nav jadi vertikal */
+        gap: 1rem;
+    }
+    
+    header ul {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        gap: 0.5rem;
+    }
+
+    header li {
+        margin-left: 0;
+        width: 100%;
+    }
+    
+    #hero {
+        flex-direction: column-reverse; /* Gambar di atas, teks di bawah */
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+}
